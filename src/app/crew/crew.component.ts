@@ -10,9 +10,9 @@ export class CrewComponent implements OnInit {
   memberBeingEdited: object = null;
 
   crew: object[] = [
-    {name: "Eileen Collins", firstMission: false},
-    {name: "Mae Jemison", firstMission: false},
-    {name: "Ellen Ochoa", firstMission: true}
+    { name: "Eileen Collins", firstMission: false },
+    { name: "Mae Jemison", firstMission: false },
+    { name: "Ellen Ochoa", firstMission: true }
   ];
 
 
@@ -21,26 +21,25 @@ export class CrewComponent implements OnInit {
   ngOnInit() {
   }
 
-  add(memberName: string, isFirst: boolean){
+  add(memberName: string, isFirst: boolean) {
     interface CrewMember {
       name: string;
       firstMission: boolean;
     }
-    // console.log(this.crew.indexOf({name: memberName, firstMission: isFirst}))
-    if (this.crew.some((element: CrewMember) => element.name === memberName)){
+    if (this.crew.some((element: CrewMember) => element.name === memberName)) {
       return;
     } else {
-      this.crew.push({name: memberName, firstMission: isFirst});
-    } 
+      this.crew.push({ name: memberName, firstMission: isFirst });
+    }
   }
-  remove(member: object) :void {
+  remove(member: object): void {
     let index = this.crew.indexOf(member);
     this.crew.splice(index, 1);
   }
-  edit(member:object) :void {
+  edit(member: object): void {
     this.memberBeingEdited = member;
   }
-  save(name:string, member: object) :void {
+  save(name: string, member: object): void {
     member['name'] = name;
     this.memberBeingEdited = null;
   }
