@@ -15,13 +15,23 @@ export class CrewComponent implements OnInit {
     {name: "Ellen Ochoa", firstMission: true}
   ];
 
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  add(memberName: string, isFirst: boolean) :void {
-    this.crew.push({name: memberName, firstMission: isFirst});
+  add(memberName: string, isFirst: boolean){
+    interface CrewMember {
+      name: string;
+      firstMission: boolean;
+    }
+    // console.log(this.crew.indexOf({name: memberName, firstMission: isFirst}))
+    if (this.crew.some((element: CrewMember) => element.name === memberName)){
+      return;
+    } else {
+      this.crew.push({name: memberName, firstMission: isFirst});
+    } 
   }
   remove(member: object) :void {
     let index = this.crew.indexOf(member);
