@@ -1,6 +1,7 @@
 .displayBox {
     height: 275px;
     width: auto;
+    font-style: italic;
 }
 
 h3 {

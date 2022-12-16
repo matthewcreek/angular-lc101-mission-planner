@@ -5,6 +5,7 @@ li:hover {
 .displayBox {
     height: 275px;
     width: auto;
+    color: rgb(77, 22, 22);
 }
 
 img {
@@ -22,4 +23,5 @@ h3 {
 /* Add a 'selected' class here to style selected astronaut names a different color. */
 .selected {
     color: rgb(27, 57, 224);
+    font-weight: bold;
 }
